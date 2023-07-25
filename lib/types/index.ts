@@ -1,11 +1,12 @@
 import { Chess, Square } from "chess.js";
 
 export type ChessSliceStateType = {
-  board: ReturnType<Chess["board"]>;
+  game: Chess | undefined;
+  board: ReturnType<Chess["board"]> | undefined;
   possibleMoves: Square[];
-  selectedSquare: Square | null;
+  selectedSquare: Square | undefined;
   moveHistory: string[];
   capturedPieces: string[];
-  status: string;
+  status: string | undefined;
   turn: "w" | "b";
 };

@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Color, PieceSymbol, type Square as SquareType } from "chess.js";
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import Square from "./Square";
 import { piecesMap } from '../../lib/utils';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/store';
+import { init } from '../../lib/redux';
 
 const Board: React.FC = () => {
-    const { board, possibleMoves, capturedPieces, moveHistory } = useSelector((state: RootState) => state.chess);
+    const { game, board, possibleMoves, capturedPieces, moveHistory } = useSelector((state: RootState) => state.chess);
+
+    const dispatch = useDispatch<any>()
+    useEffect(() => {
+        if (!game) dispatch(init())
+    }, [game])
 
     const determineSquareColor = (file: string, rank: string, isPossibleMove: boolean) => {
         if (isPossibleMove) return "yellow.500";
@@ -47,7 +53,7 @@ const Board: React.FC = () => {
             </Box>
 
             <Grid templateColumns="repeat(8, 1fr)">
-                {board.flat().map((piece, i) => renderSquare(piece, i))}
+                {board?.flat().map((piece, i) => renderSquare(piece, i))}
             </Grid>
 
             <Box>

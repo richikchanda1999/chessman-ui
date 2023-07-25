@@ -2,17 +2,21 @@
 'use client'
 
 import { CacheProvider } from '@chakra-ui/next-js'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Flex } from '@chakra-ui/react'
+import NavBar from 'src/components/NavBar'
 
-export function UIProvider({ 
-    children 
-  }: { 
-  children: React.ReactNode 
-  }) {
+export function UIProvider({
+  children
+}: {
+  children: React.ReactNode
+}) {
   return (
     <CacheProvider>
       <ChakraProvider>
-        {children}
+        <Flex direction={'column'}>
+          <NavBar />
+          {children}
+        </Flex>
       </ChakraProvider>
     </CacheProvider>
   )

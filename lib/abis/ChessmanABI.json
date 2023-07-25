@@ -1,0 +1,323 @@
+[
+    {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "inputs": [],
+        "name": "INITIAL_RATING",
+        "outputs": [
+            {
+                "internalType": "int256",
+                "name": "",
+                "type": "int256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_gameId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "abandonedBy",
+                "type": "uint256"
+            }
+        ],
+        "name": "abandonGame",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_gameId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "_pubKey",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_signedData",
+                "type": "string"
+            }
+        ],
+        "name": "addSignedData",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "admin",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_gameId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "pubKey",
+                "type": "string"
+            }
+        ],
+        "name": "approveGameRequest",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_gameId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "gameResult",
+                "type": "string"
+            },
+            {
+                "internalType": "int256",
+                "name": "whiteRatingChange",
+                "type": "int256"
+            },
+            {
+                "internalType": "int256",
+                "name": "blackRatingChange",
+                "type": "int256"
+            }
+        ],
+        "name": "finishGame",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "gameDataRequests",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "gameId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "pubKey",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "gameData",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "games",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "gameId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "whitePlayer",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "blackPlayer",
+                "type": "address"
+            },
+            {
+                "internalType": "string",
+                "name": "gamePubKey",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "gameDataWhite",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "gameDataBlack",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "gameResult",
+                "type": "string"
+            },
+            {
+                "internalType": "bool",
+                "name": "isAbandonedByWhite",
+                "type": "bool"
+            },
+            {
+                "internalType": "bool",
+                "name": "isAbandonedByBlack",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_gameId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "pubKey",
+                "type": "string"
+            }
+        ],
+        "name": "requestAccess",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "blackPlayerAddr",
+                "type": "address"
+            }
+        ],
+        "name": "startGameRequest",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_gameId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "_gameHash",
+                "type": "string"
+            }
+        ],
+        "name": "submitGameBlack",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_gameId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "_gameHash",
+                "type": "string"
+            }
+        ],
+        "name": "submitGameWhite",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "userArr",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "users",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "userAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "int256",
+                "name": "rating",
+                "type": "int256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
+]
