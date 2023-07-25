@@ -11,14 +11,11 @@ import {
   useToast,
   Textarea,
 } from "@chakra-ui/react";
-import Board from "src/components/Board";
-import { useSelector } from "react-redux";
-import { RootState } from "../../../lib/redux/store";
 import ChessmanABI from "../../../lib/abis/ChessmanABI.json";
 import { writeContract, waitForTransaction, readContract } from "@wagmi/core";
-import { CONTRACT, stringToUint8Array, uint8ArrayToString } from "../../../lib/utils";
+import { CONTRACT, stringToUint8Array } from "../../../lib/utils";
 import { useAccount } from "wagmi";
-import rsa, { encrypt } from 'js-crypto-rsa'
+import rsa from 'js-crypto-rsa'
 
 const Home: React.FC = () => {
   // const { turn } = useSelector((state: RootState) => state.chess);
@@ -133,7 +130,7 @@ const Home: React.FC = () => {
   }, [address]);
 
   return (
-    <Flex py={10}>
+    <Flex p={10} gap={4}>
       <Flex direction={"column"} gap={4} flex={1}>
         <Input
           value={blackPlayerAddr}
@@ -161,7 +158,7 @@ const Home: React.FC = () => {
           })}
         </VStack>
       </Flex>
-      <Flex direction={"column"} gap={4} flex={4}>
+      <Flex display={games[selectedGameIndex] === undefined ? 'none' : 'flex'} direction={"column"} gap={4} flex={1}>
         <Heading as="h1">Game {games[selectedGameIndex]?.gameId}</Heading>
         <Text fontSize={"lg"}>
           White: {games[selectedGameIndex]?.whitePlayer}
