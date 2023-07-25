@@ -6,7 +6,7 @@ import { readContract, waitForTransaction, writeContract } from "@wagmi/core";
 import { CONTRACT, uint8ArrayToString } from "../../../lib/utils";
 import ChessmanABI from "../../../lib/abis/ChessmanABI.json";
 import rsa from 'js-crypto-rsa'
-import { pgnView } from '@mliebelt/pgn-viewer'
+import dynamic from 'next/dynamic'
 
 function Leaderboard() {
     const [users, setUsers] = useState<any[]>([]);
@@ -202,6 +202,7 @@ function Leaderboard() {
                                 console.log('White', decryptedWhite);
                                 console.log('Black', decryptedBlack);
 
+                                const pgnView = await import('@mliebelt/pgn-viewer').then((m) => m.pgnView);
                                 pgnView(`board-${game.gameId}`, {pgn: decryptedWhite, locale: 'fr', width: '200px'})
 
                                 console.log()
@@ -244,9 +245,7 @@ function Leaderboard() {
                                 setRatingChange(parseInt(e.target.value));
                             }} />
                         }
-                        <div id={`board-${game.gameId}`} style={{ width: '400px' }}>
-                
-                        </div>
+                        <div id={`board-${game.gameId}`} style={{ width: '400px' }} />
                     </Flex>
                 })}
             </Flex>
