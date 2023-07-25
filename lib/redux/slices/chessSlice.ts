@@ -1,18 +1,11 @@
 // store/chessSlice.ts
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Chess, Square } from "chess.js";
+import { ChessSliceStateType } from "../../types";
 
 const game: Chess = new Chess();
 
-const initialState: {
-  board: ReturnType<Chess["board"]>;
-  possibleMoves: Square[];
-  selectedSquare: Square | null;
-  moveHistory: string[];
-  capturedPieces: string[];
-  status: string;
-  turn: "w" | "b";
-} = {
+const initialState: ChessSliceStateType = {
   board: game.board(),
   possibleMoves: [] as Square[],
   selectedSquare: null,

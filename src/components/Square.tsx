@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
-import { piecesMap } from "src/utils";
+import { piecesMap } from "../../lib/utils";
 import { selectSquare } from "../../lib/redux";
 import { type Square as SquareType } from "chess.js";
 

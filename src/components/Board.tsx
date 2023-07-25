@@ -2,7 +2,7 @@ import React from 'react';
 import { Color, PieceSymbol, type Square as SquareType } from "chess.js";
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import Square from "./Square";
-import { piecesMap } from 'src/utils';
+import { piecesMap } from '../../lib/utils';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/store';
 
