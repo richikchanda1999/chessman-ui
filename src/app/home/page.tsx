@@ -1,24 +1,22 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Container, Heading, VStack, Text } from "@chakra-ui/react";
 import Board from 'src/components/Board';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../lib/redux/store';
 
 const Home: React.FC = () => {
-  const [currentPlayer, setCurrentPlayer] = useState<'w' | 'b'>('w');
-
-    useEffect(() => {
-        console.log(currentPlayer)
-    }, [currentPlayer])
+  const {turn} = useSelector((state: RootState) => state.chess);
 
   return (
     <Container maxW="container.md" centerContent py={10}>
       <VStack spacing={8}>
         <Heading as="h1">Chess Game</Heading>
         <Text fontSize="xl">
-          {currentPlayer === 'w' ? "White's Turn" : "Black's Turn"}
+          {turn === 'w' ? "White's Turn" : "Black's Turn"}
         </Text>
-        <Board currentPlayer={currentPlayer} onPlayerChange={setCurrentPlayer} />
+        <Board />
       </VStack>
     </Container>
   );
