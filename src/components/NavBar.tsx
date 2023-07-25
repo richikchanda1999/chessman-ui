@@ -1,13 +1,16 @@
 'use client';
 
 import React from "react";
-import { Box, Flex, Link, Spacer, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Link, Spacer, Text } from "@chakra-ui/react";
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useAccount } from "wagmi";
+import { useRouter } from "next/navigation";
 
 const NavBar: React.FC = () => {
 
   const { isConnected } = useAccount()
+
+  const router = useRouter()
 
   return (
     <Box bg="blue.500" px={4} py={2}>
@@ -17,9 +20,17 @@ const NavBar: React.FC = () => {
           Chessman
         </Text>
         <Spacer />
-        <Link color="white" mr={4} href={isConnected ? '/home' : '/'}>
+        <Button color="white" mr={4} variant={'link'} onClick={() => {
+          if (isConnected) router.replace('/home')
+          else router.replace('/')
+        }}>
           Home
-        </Link>
+        </Button>
+        <Button color="white" mr={4} variant={'link'} onClick={() => {
+          router.replace('/leaderboard')
+        }}>
+          Leaderboard
+        </Button>
       </Flex>
     </Box>
   );

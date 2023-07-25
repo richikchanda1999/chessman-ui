@@ -302,6 +302,70 @@
                 "internalType": "address",
                 "name": "",
                 "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "userGames",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "gameId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "whitePlayer",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "blackPlayer",
+                "type": "address"
+            },
+            {
+                "internalType": "string",
+                "name": "gamePubKey",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "gameDataWhite",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "gameDataBlack",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "gameResult",
+                "type": "string"
+            },
+            {
+                "internalType": "bool",
+                "name": "isAbandonedByWhite",
+                "type": "bool"
+            },
+            {
+                "internalType": "bool",
+                "name": "isAbandonedByBlack",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
             }
         ],
         "name": "users",
